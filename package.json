@@ -8,6 +8,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm run dev --workspace=react-frontend",
+    "server": "npm run start --workspace=rest-api-backend",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "workspaces":[

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function Form(props) {
   const [person, setPerson] = useState({
@@ -16,9 +16,13 @@ function Form(props) {
     }
   }
 
-  function submitForm() {
-    props.handleSubmit(person);
-    setPerson({ name: "", job: "" });
+  async function submitForm() {
+    try {
+      await props.handleSubmit(person);
+      setPerson({ name: "", job: "" });
+    } catch {
+      // MyApp logs the request error and leaves the entered values available to retry.
+    }
   }
 
   return (
