@@ -5,7 +5,8 @@ describe('div', () => {
     expect(myFunctions.div(12, 3)).toBe(4);
   });
 
-  test('divides negative and decimal values', () => {
+  
+  test('divides neg and decimal values', () => {
     expect(myFunctions.div(-7.5, 2.5)).toBe(-3);
   });
 
