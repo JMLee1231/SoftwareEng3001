@@ -1,11 +1,12 @@
 {
-  "name": "rest-api-backend",
+  "name": "express-backend",
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "main": "backend.js",
   "scripts": {
     "start": "node backend.js",
-    "dev": "node --watch backend.js"
+    "dev": "nodemon backend.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
