@@ -16,13 +16,14 @@ function Form(props) {
     }
   }
 
-  function submitForm() {
-    props.handleSubmit(person);
-    setPerson({ name: "", job: "" });
+  async function submitForm(event) {
+    event.preventDefault();
+    const wasSaved = await props.handleSubmit(person);
+    if (wasSaved) setPerson({ name: "", job: "" });
   }
 
   return (
-    <form>
+    <form onSubmit={submitForm}>
       <label htmlFor="name">Name</label>
       <input
         type="text"
@@ -41,7 +42,7 @@ function Form(props) {
         onChange={handleChange}
       />
 
-      <input type="button" value="Submit" onClick={submitForm} />
+      <input type="submit" value="Submit" />
     </form>
   );
 }
